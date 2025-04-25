@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Builds de Genshin para meu Guerreiro :3 </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('genshin.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            color: #ffb400;
+        }
+        .button {
+            background-color: #5f5f5f;
+            border: none;
+            padding: 15px 30px;
+            margin: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 10px;
+        }
+        .button:hover {
+            background-color: #ffb400;
+            transform: scale(1.05);
+        }
+        .build-description {
+            margin-top: 20px;
+            background-color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+            text-align: left;
+        }
+        .button-container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Builds de Genshin para meu Guerreiro :3 </h1>
+        <div class="button-container">
+            <button class="button" onclick="showDescription('exploration')">Build Exploração</button>
+            <button class="button" onclick="showDescription('casual')">Build Casual</button>
+            <button class="button" onclick="showDescription('damage')">Build de Dano Alto</button>
+        </div>
+
+        <div id="exploration" class="build-description">
+            <h2>Build Exploração</h2>
+            <p><strong>Personagem:</strong> Sayu</p>
+            <p><strong>Arma:</strong> Espadão de 4 estrelas - Espinha Dorsal da Serpente</p>
+            <p><strong>Artefatos:</strong> Selo da Insulação</p>
+            <p><strong>Descrição:</strong> Sayu é uma personagem perfeita pra oce nos dias em que oce quer se aventurar pelo mapa coletando recursos, baús e completando missões secundárias. Seu estilo ninja e sua habilidade de rolar rapidamente pelo mapa deixam a exploração leve e divertida, o que combina muito com seu jeitinho de jogar: livre, fluido e com foco na progressão sem esforço. Essa Buildzinha favorece recarga de energia e utilidade, permitindo que oce explore por horas sem precisar se preocupar com os inimigos difíceis ou ficar sem cura, hihihip>
+        </div>
+
+        <div id="casual" class="build-description">
+            <h2>Build Casual</h2>
+            <p><strong>Personagem:</strong> Noelle</p>
+            <p><strong>Arma:</strong> Espadão de 3 ou 4 estrelas - Espadão do Cavaleiro do Alvorecer</p>
+            <p><strong>Artefatos:</strong> Gladiador ou Cavaleiro Ensanguentado</p>
+            <p><strong>Descrição:</strong> Para aquele dia mais preguiçoso em que meu pincipi só quer relaxar e brincar um pouco com o jogo, Noelle é perfeita. Ela cura, defende e ainda causa um bom dano com sua ultimate. ela é mil e uma utilidades :D Tudo o que oce precisa fazer é ativar a ult e deixar o resto acontecer. A jogabilidade é simples, mas eficaz, e a sensação de "pilotar um tanque" deve agradar muito ao jeitinho relaxado e inteligente com que oce gosta de jogar. Além disso, é uma ótima opção para deixar o combate automático com um mínimo de esforço, ja q vc fica com piguicinha.</p>
+        </div>
+
+        <div id="damage" class="build-description">
+            <h2>Build de Dano Alto</h2>
+            <p><strong>Personagem:</strong> Raiden Shogun</p>
+            <p><strong>Arma:</strong> Lança de 5 estrelas - Luz Cortante da Ceifadora</p>
+            <p><strong>Artefatos:</strong> Emblem of Severed Fate (Selo da Insulação)</p>
+            <p><strong>Descrição:</strong> Para quando oce quiser sentir o poder absoluto em suas mãos, Raiden é a escolha perfeita. A build com foco em recarga e dano explosivo combina com momentos em que oce quer ver números altos na tela e se sentir no controle total. É poderosa, visualmente incrível e ao mesmo tempo prática, com a mecânica de ativar ultimates mais vezes. ce não precisa se preocupar em trocar de personagem toda hora, o que mantém o combate fluido. Essa é a build para se sentir um verdadeiro mestre, como oce gosta, rs .</p>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop autoplay>
+        <source src="genshin_theme.mp3.mp3" type="audio/mp3">
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+
+    <script>
+        function showDescription(build) {
+            const descriptions = document.querySelectorAll('.build-description');
+            descriptions.forEach(desc => desc.style.display = 'none');
+            document.getElementById(build).style.display = 'block';
+        }
+
+        window.addEventListener('load', () => {
+            const music = document.getElementById('bgMusic');
+            music.volume = 4.0;
+            music.play().catch(e => console.log('Autoplay falhou:', e));
+        });
+    </script>
+
+</body>
+</html>
